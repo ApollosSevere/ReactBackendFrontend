@@ -1,12 +1,23 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import Slider from './HomeComponents/Slider'
 import GalleryProduct from './HomeComponents/GalleryProduct'
+import { GlobalContext } from '../../Context/Context'
 
 function Home() {
+    const { products } = useContext(GlobalContext)
+    console.log(products)
+    const items = products.map((item) => (
+        <GalleryProduct 
+            id={item.id}
+            img={item.img} price={item.price} 
+            title={item.title} text={item.text}
+            prodctObject={item}>
+        </GalleryProduct>
+    ))
     return (
         <div className="main-content">
            <Slider />
-
+            
             <div className="homeContent">
                 <section className="newArrivals">
                     <div className="container heading d-flex justify-content-center">
@@ -21,7 +32,8 @@ function Home() {
 
 
                 <section className="items">
-                    <div className="row">
+                    <div className="row">{items}</div>
+                    {/* <div className="row">
                         <GalleryProduct 
                             img="images/item-img-1-1.jpg" 
                             price={299} title="wooden chair"
@@ -45,7 +57,7 @@ function Home() {
                             price={299} title="wooden chair"
                             text="Lorem ipsum dolor sit amet">
                         </GalleryProduct>
-                    </div>
+                    </div> */}
                 </section>
                 
             </div>

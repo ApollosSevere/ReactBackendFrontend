@@ -1,12 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom' 
 
-function GalleryProduct({ img, price, title, text }) {
+function GalleryProduct({ id, img, price, title, text, prodctObject }) {
+    console.log(prodctObject)
+    // let yo = prodctObject.json()
+    // console.log(yo);
     return (
         <div className="col-md-3 col-sm-6">
             <div class="item">
                 {/* <!-- Images --> */}
-                <Link to="/productDetail"><img class="img-1" src={ img } alt="" /></Link>
+                <Link to={`/productDetail/${id}`} ><img class="img-1" src={ img } alt="" /></Link>
                 
                 {/* <!-- Overlay  --> */}
                 <div class="overlay">

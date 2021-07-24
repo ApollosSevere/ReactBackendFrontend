@@ -3,34 +3,40 @@ import logo from './logo.svg';
 import Home from './components/Home/Home';
 import Header from './components/utils/Header/Header';
 import ProductDetail from './components/productDetail/ProductDetail';
-
+import { GlobalProvider } from './Context/Context';
+import Checkout from './components/Checkout/Checkout';
 import './App.css';
 // import '../../assets/main.css'
 
 function App() {
+  
+
   return (
-    <div className="wrapper">
-      <Router>
-        <Header />
-        <div className="stuff">
-          <Switch>
+    <GlobalProvider>
+       <div className="wrapper">
+        <Router>
+          <Header />
+          <div className="stuff">
+            <Switch>
 
-            {/* <Route path="/">
-              <Home />
-            </Route> */}
+              {/* <Route path="/">
+                <Home />
+              </Route> */}
 
-            {/* <Route exact path="/produtDetail">
-              <ProductDetail />
-            </Route> */}
+              {/* <Route exact path="/produtDetail">
+                <ProductDetail />
+              </Route> */}
 
-            <Route path="/" exact component={Home}/>
-            <Route path="/productDetail" component={ProductDetail}/>
+              <Route path="/" exact component={Home}/>
+              <Route path="/productDetail/:productObject" component={ProductDetail}/>
+              <Route path="/checkout" component={Checkout}/>
 
-          </Switch>
-        </div>
-        
-      </Router>
-    </div>
+            </Switch>
+          </div>
+          
+        </Router>
+      </div>
+    </GlobalProvider>
   );
 }
 

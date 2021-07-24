@@ -9,7 +9,7 @@ function Slider() {
                         <h1>Image 1</h1>
                         <p>The Greatest ever</p>
                     </div>
-                    <img src="./images/slide-bg-1.jpg" alt="" />
+                    <img src="./images/hero_bg.jpg" alt="" />
                 </div>
 
                 <a className="prev">&#10094;</a>

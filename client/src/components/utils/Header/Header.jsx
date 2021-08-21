@@ -2,6 +2,7 @@ import{ React, useState} from 'react'
 import {Link} from 'react-router-dom' 
 
 function Header() {
+    
     window.addEventListener('scroll', () => {
         let header = document.getElementById("header")
         header.classList.toggle("sticky", window.scrollY > 0);
@@ -13,7 +14,7 @@ function Header() {
                 <div className="container d-flex align-items-center justify-content-between">
                     <div className="left">
                         <div className="logo">
-                            <Link to="/"><img src="images/logo.png" alt="" /></Link>
+                            <Link to="/"><img src="/images/logo.png" alt="" /></Link>
                         </div>
                     </div>
 

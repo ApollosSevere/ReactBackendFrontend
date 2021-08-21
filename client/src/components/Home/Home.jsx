@@ -5,7 +5,7 @@ import { GlobalContext } from '../../Context/Context'
 
 function Home() {
     const { products } = useContext(GlobalContext)
-    console.log(products)
+    // console.log(products)
     const items = products.map((item) => (
         <GalleryProduct 
             id={item.id}
@@ -17,7 +17,6 @@ function Home() {
     return (
         <div className="main-content">
            <Slider />
-            
             <div className="homeContent">
                 <section className="newArrivals">
                     <div className="container heading d-flex justify-content-center">

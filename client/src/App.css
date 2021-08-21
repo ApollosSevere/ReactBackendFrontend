@@ -487,6 +487,12 @@ ul{
   font-size: 18px;
   /* display: inline-block; */
   letter-spacing: 1px;
+  cursor: pointer;
+}
+.btnM:hover {
+  background-color: #2d3a4b;
+  color: #fff;
+
 }
 
 .shop-detail .quinty{

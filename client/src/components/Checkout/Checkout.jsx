@@ -1,8 +1,23 @@
-import React from 'react'
+import React, {useContext}from 'react'
+import { Link } from 'react-router-dom'
 import CartProduct from './CheckoutComponets/CartProduct'
+import { GlobalContext } from '../../Context/Context'
+
 // import banner from './images/first.jpg'
 
 function Checkout() {
+    let { cart }= useContext(GlobalContext)
+    
+
+    const items = cart.map(item => (
+        <CartProduct 
+            name={item.name} text={item.text} 
+            id={item.id} amt={item.amount}
+            title={item.title} price={item.price} 
+            img={item.img} total={item.total}
+        />
+    ))
+    
     return (
         <div className="main-content">
             {/* <!-- HEADING-BANNER START --> */}
@@ -16,7 +31,7 @@ function Checkout() {
 								</div>
 								<div class="breadcumbs pb-15">
 									<ul>
-										<li><a href="index.html">Home</a></li>
+										<li><Link to='/'>Home</Link></li>
 										<li>Shopping Cart</li>
 									</ul>
 								</div>
@@ -65,7 +80,7 @@ function Checkout() {
                                                     </thead>
 
                                                     <tbody>
-                                                        <CartProduct />
+                                                        {items}
                                                     </tbody>
                                                 </table>
                                             </div>
@@ -83,3 +98,8 @@ function Checkout() {
 }
 
 export default Checkout
+
+
+/* Things to implement:
+    1. Adding state functionality to cart-page-menu to display things only if valuew mathces
+*/ 
